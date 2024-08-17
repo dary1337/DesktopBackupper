@@ -34,8 +34,12 @@ namespace DesktopBackupper {
             string backupFrom = Settings.All[Settings.Keys.BackupFrom];
             string backupTo = Settings.All[Settings.Keys.BackupTo];
 
-            if (backupTo == "")
+
+            if (backupTo == "") {
                 Settings.changeBackupTo();
+                backup();
+                return;
+            }
 
             if (backupFrom == backupTo) {
                 Console.WriteLine("[backupFrom] and [backupTo] can't be the same!");
@@ -48,6 +52,9 @@ namespace DesktopBackupper {
             if (!Directory.Exists(backupFrom)) {
                 Console.WriteLine("[backupFrom] value contains not existed folder");
                 Settings.changeBackupTo();
+
+                backup();
+                return;
             }
 
             string dateName = DateTime.Now.ToString("dd_MM_yyyy-HH_mm_ss");
