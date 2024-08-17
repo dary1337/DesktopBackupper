@@ -22,7 +22,7 @@ namespace DesktopBackupper {
             public const string _echoEveryCopied = "# See every copied file and folder";
             public const string Echo = "echo";
             
-            public const string _closeOnFinish = "# Close the programm if there were no errors during backup?";
+            public const string _closeOnFinish = "# Close the program if there were no errors during backup?";
             public const string closeOnFinish = "closeOnFinish";
         }
 
