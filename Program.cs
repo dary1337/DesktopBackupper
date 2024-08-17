@@ -19,7 +19,13 @@ namespace DesktopBackupper {
                 return;
             }
 
-            Environment.Exit(0);
+            if (Settings.All[Settings.Keys.closeOnFinish] == "true") {
+                Environment.Exit(0);
+                return;
+            }
+
+            Console.WriteLine("No errors, u can close the program");
+            Console.ReadKey();
         }
 
         static void backup() {
